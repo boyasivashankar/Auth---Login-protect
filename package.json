@@ -1,0 +1,16 @@
+{
+  "name": "flyrank-auth-api",
+  "version": "1.0.0",
+  "description": "Secure REST API with Express and Supabase Auth",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
