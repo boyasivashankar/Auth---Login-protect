@@ -114,9 +114,14 @@ app.get("/protected/profile", auth, (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// Start server
+// Start server (only when run directly, not when imported by Vercel)
 // ---------------------------------------------------------------------------
-app.listen(PORT, () => {
-  console.log(`🚀  Server running on http://localhost:${PORT}`);
-  console.log(`📄  API docs available at http://localhost:${PORT}/docs`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀  Server running on http://localhost:${PORT}`);
+    console.log(`📄  API docs available at http://localhost:${PORT}/docs`);
+  });
+}
+
+// Export the app for Vercel serverless deployment
+module.exports = app;
